@@ -21,3 +21,4 @@
 - logback-core
 - logback-classic
 - junit (Library used to run tests)
+- flatlaf (Library used to change the "look and feel")
