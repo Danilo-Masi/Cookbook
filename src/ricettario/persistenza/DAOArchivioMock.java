@@ -12,26 +12,22 @@ public class DAOArchivioMock implements IDAOArchivio {
 
         Archivio archivio = new Archivio();
         
-        //Inizializziamo una nuiva pietanza
-        Pietanza pietanzaPastaAlleNoci = new Pietanza("Pasta alle noci", Costanti.PRIMO, 10.0);
-        //Aggiungiamo gli ingredienti
-        pietanzaPastaAlleNoci.aggiungiIngrediente(new Ingrediente("Pasta", 80, false, 400));
-        pietanzaPastaAlleNoci.aggiungiIngrediente(new Ingrediente("Noci", 30, true, 200));
-        pietanzaPastaAlleNoci.aggiungiIngrediente(new Ingrediente("Panna", 100, true, 500));
-        //Aggiungiamo la pietanza all'archivio
-        archivio.aggiungiPietanza(pietanzaPastaAlleNoci);
+        Pietanza pastaAlPesto = new Pietanza("Pasta al pesto", Costanti.PRIMO, 5.0);
+        pastaAlPesto.aggiungiIngrediente(new Ingrediente("Pasta", 100, false, 400));
+        pastaAlPesto.aggiungiIngrediente(new Ingrediente("Pesto", 10, true, 100));
+        archivio.aggiungiPietanza(pastaAlPesto);
         
-        Pietanza pietanzaPastaAiGamberi = new Pietanza("Pasta ai gamberi", Costanti.PRIMO, 10.0);
-        pietanzaPastaAiGamberi.aggiungiIngrediente(new Ingrediente("Pasta", 80, false, 400));
-        pietanzaPastaAiGamberi.aggiungiIngrediente(new Ingrediente("Gamberi", 30, true, 200));
-        pietanzaPastaAiGamberi.aggiungiIngrediente(new Ingrediente("Panna", 100, true, 500));
-        archivio.aggiungiPietanza(pietanzaPastaAiGamberi);
+        Pietanza pastaAlleCozze = new Pietanza("Pasta alle cozze", Costanti.PRIMO, 10.0);
+        pastaAlleCozze.aggiungiIngrediente(new Ingrediente("Pasta", 100, false, 400));
+        pastaAlleCozze.aggiungiIngrediente(new Ingrediente("Cozze", 150, true, 500));
+        archivio.aggiungiPietanza(pastaAlleCozze);
         
-        Pietanza antipastoallitaliana = new Pietanza("Italiana", Costanti.ANTIPASTO, 20.0);
-        antipastoallitaliana.aggiungiIngrediente(new Ingrediente("Latticini", 150, false, 400));
-        antipastoallitaliana.aggiungiIngrediente(new Ingrediente("Prosciutto", 33, false, 200));
-        antipastoallitaliana.aggiungiIngrediente(new Ingrediente("Miele", 3, false, 500));
-        archivio.aggiungiPietanza(antipastoallitaliana);
+        
+        Pietanza cotolotta = new Pietanza("Cotoletta", Costanti.SECONDO, 7.0);
+        cotolotta.aggiungiIngrediente(new Ingrediente("Carne di pollo", 100, false, 200));
+        cotolotta.aggiungiIngrediente(new Ingrediente("Pane sbriciolato", 50, true, 300));
+        cotolotta.aggiungiIngrediente(new Ingrediente("Olio", 5, true, 500));
+        archivio.aggiungiPietanza(cotolotta);
         
         return archivio;
     }

@@ -22,17 +22,17 @@ public class ArchivioTest extends TestCase {
     }
     
     public void testFiltroCategoria() {
-        assertEquals(1, archivio.cercaPietanzePerCategoria(Costanti.ANTIPASTO).size());
+        assertEquals(0, archivio.cercaPietanzePerCategoria(Costanti.ANTIPASTO).size());
         assertEquals(2, archivio.cercaPietanzePerCategoria(Costanti.PRIMO).size());
-        assertEquals(0, archivio.cercaPietanzePerCategoria(Costanti.SECONDO).size());
+        assertEquals(1, archivio.cercaPietanzePerCategoria(Costanti.SECONDO).size());
         assertEquals(0, archivio.cercaPietanzePerCategoria(Costanti.DESSERT).size());
     }
     
     public void testPietanzaSimileCategoria() {
-        Pietanza pietanzaPastaAlleNoci = archivio.getPietanze().get(0);
-        Pietanza pietanzaPastaAiGamberi = archivio.getPietanze().get(1);
-        assertEquals("Pasta ai gamberi", archivio.cercaPietanzaSimile(pietanzaPastaAlleNoci).getNome());
-        assertEquals("Pasta alle noci", archivio.cercaPietanzaSimile(pietanzaPastaAiGamberi).getNome());        
+        Pietanza pastaAlPesto = archivio.getPietanze().get(0);
+        Pietanza cotoletta = archivio.getPietanze().get(2);
+        assertEquals("Cotoletta", archivio.cercaPietanzaSimile(pastaAlPesto).getNome());
+        assertEquals("Pasta al pesto", archivio.cercaPietanzaSimile(cotoletta).getNome());        
     }
     
 }
