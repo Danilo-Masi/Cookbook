@@ -1,6 +1,8 @@
 package ricettario;
 
+import com.formdev.flatlaf.FlatDarkLaf;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 import ricettario.controllo.ControlloMenu;
 import ricettario.controllo.ControlloPrincipale;
 import ricettario.modello.Modello;
@@ -66,7 +68,12 @@ public class Applicazione {
     }
 
     public static void main(String[] args) {
-               
+         try {
+            UIManager.setLookAndFeel(new FlatDarkLaf());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+         
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
